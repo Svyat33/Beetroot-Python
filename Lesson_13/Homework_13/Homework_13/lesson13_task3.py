@@ -4,6 +4,7 @@
 #     Otherwise, return the result of the second one
 
 def choose_func(nums: list, *args):
+
     for i in args:
         nums = i(nums)
     return nums
@@ -13,6 +14,11 @@ def square_nums(num):
     return res
 
 def remove_negatives(num):
+    #     ты же умеешь в компрехенсион. Развивай мысль даьлше.
+    return [i for i in num if i > 0]
+    # или используя фильтр, хотя лямбда несколько усложняет.
+    return list( filter( lambda i: i>0, num) )
+#     и конечно традиционный цикл имеет право на жизнь я не спорю но он немного громоздко выглядит
     res = []
     for i in num:
         if i > 0:
